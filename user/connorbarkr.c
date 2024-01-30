@@ -49,16 +49,11 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
+	if (!process_caps_word(keycode, record)) { return false; }
+	// if (!process_custom_shift_keys(keycode, record)) { return false; }
 	if (!process_os_mode(keycode, record, QC_OS)) { return false; }
 
 	switch (keycode) {
-		case KC_TEQ:
-			if (record->event.pressed)
-			{
-				SEND_STRING("===");
-			}
-			break;
-
 		case KC_UDIR:
 			if (record->event.pressed)
 			{
@@ -66,17 +61,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 			}
 			break;
 
+		case KC_GOEQ:
+			if 	(record->event.pressed)
+			{
+				SEND_STRING(":=");
+			}
+			break;
+
 		case PHONE:
 			if (record->event.pressed)
 			{
-				SEND_STRING("+1 (226) 338-7794");
+				SEND_STRING("+1 (415) 832-9511");
 			}
 			break;
 
 		case EMAIL:
 			if (record->event.pressed)
 			{
-				SEND_STRING("connorbarkr@gmail.com");
+				SEND_STRING("yoav.arbiv@gmail.com");
 			}
 			break;
 	}
@@ -161,6 +163,7 @@ void swap_reset(tap_dance_state_t *state, void *user_data) {
 }
 
 tap_dance_action_t tap_dance_actions[] = {
+	[QC_Q] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),,s
 	[SWAP] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, swap_finished, swap_reset)
 };
 

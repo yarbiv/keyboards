@@ -10,7 +10,7 @@ enum custom_keycodes {
 	PHONE = SAFE_RANGE,
 	EMAIL,
 	KC_UDIR,
-	KC_TEQ,
+	KC_GOEQ,
 	QC_OS,
 	QC_POS,
 	QC_CPY,
@@ -40,16 +40,15 @@ enum custom_keycodes {
 
 enum layer_names {
 	_COLEMAK,
-	_QWERTY,
 	_GAME,
-	_NAV,
+	_NUMVIGATION,
 	_SYM,
-	_NUM,
 	_MEDIA,
 	_MOUSE,
 };
 
 enum tap_dances {
+	QC_Q,
 	OSFT,
 	SWAP,
 };
