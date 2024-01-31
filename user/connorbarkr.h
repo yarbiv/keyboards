@@ -1,8 +1,8 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "features/caps_word.h"
-#include "features/custom_shift_keys.h"
+// #include "features/caps_word.h"
+// #include "features/custom_shift_keys.h"
 #include "features/os_mode.h"
 // #include "features/layer_lock.h"
 
@@ -13,6 +13,8 @@ enum custom_keycodes {
 	KC_GOEQ,
 	QC_OS,
 	QC_POS,
+	CLOSE,
+	TASKMAN,
 	QC_CPY,
 	QC_PAS,
 	QC_CUT,
@@ -75,9 +77,9 @@ typedef struct {
 #define LINE_DN LALT(KC_DOWN)
 #define NEXT_TAB LCTL(KC_TAB)
 #define PREV_TAB LSFT(LCTL(KC_TAB))
-#define QC_BSPC LT(_NUM, KC_BSPC)
+#define QC_BSPC LT(_MOUSE, KC_BSPC)
 #define QC_TAB LT(_MEDIA, KC_TAB)
-#define QC_SPC LT(_NAV, KC_SPC)
+#define QC_SPC LT(_NUMVIGATION, KC_SPC)
 #define QC_ENT LT(_SYM, KC_ENT)
 #define QC_Z MT(MOD_LGUI, KC_Z)
 #define QC_X MT(MOD_LALT, KC_X)
@@ -85,5 +87,8 @@ typedef struct {
 #define QC_SLSH MT(MOD_RGUI, KC_SLSH)
 #define QC_DOT MT(MOD_RALT, KC_DOT)
 #define QC_COMM MT(MOD_RCTL, KC_COMM)
+#define QC_DISC LSFT(KC_GRV)
+#define QC_STM LSFT(KC_TAB)
+#define QC_XBOX LGUI(KC_G)
 
 td_state_t cur_dance(tap_dance_state_t *state);

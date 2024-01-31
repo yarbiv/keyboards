@@ -40,17 +40,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             					KC_LSFT,  KC_SPC,   KC_TAB,             QC_TAB,   DF(0),   _______
 //	  							-----------------------------			-----------------------------
 	),
-	[_NAV] = LAYOUT_split_3x5_3(
-//	  		-------------------------------------------------			-------------------------------------------------
-			QC_DLIN,  QC_UCRS,  LINE_UP,  QC_CPAL,  QC_ACU,             QC_CUT,   QC_CPY,   KC_UP,    QC_PAS,   KC_PGUP,
-//	  		-------------------------------------------------			-------------------------------------------------
-			KC_HOME,  QC_BACK,  LINE_DN,  QC_FOR,   KC_END,             QC_LWRD,  KC_LEFT,  KC_DOWN,  KC_RIGHT, QC_RWRD,
-//	  		-------------------------------------------------			-------------------------------------------------
-			QC_MOD3,  QC_MOD2,  QC_MOD1,  QC_LINE,  QC_ACD,             QC_PRNT,  QC_UNDO,  KC_DOWN,  QC_REDO,  KC_PGDN,
-//	  		-------------------------------------------------			-------------------------------------------------
-								KC_LSFT,  QC_WBSP,  KC_TAB,             XXXXXX,   ______,   XXXXXX					
-//	  							-----------------------------			-----------------------------
-	),
 	[_SYM] = LAYOUT_split_3x5_3(
 //	  		-------------------------------------------------			-------------------------------------------------
             KC_ESC,   KC_LBRC,  KC_RBRC,  KC_TILD,  KC_AT,              KC_CIRC,  KC_UDIR,  KC_LABK,  KC_RABK,  KC_GRV,
